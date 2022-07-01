@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <title>Edit item</title>
+</head>
+<body>
+    
+<!--SIDEBAR-->
+<ul class="sidenav sidenav-fixed a-sidenav ">
+    
+    <li class="grey darken-4"> 
+        <div class="row">
+            <div class="col s12 m4 12"> <h4 class="white-text">Dosmth</h4></div>
+        </div>
+    </li>   
+    <li class="bold"><a href="#" class="waves-effect waves-darken">Списки задач</a></li>
+    <li class="bold active"><a href="#" class="waves-effect waves-darken">Все задачи</a></li>
+    <!-- <li class="bold"><a href="#" class="waves-effect waves-darken">Добавить задачу</a></li> -->
+    <li class="bold last"><a href="#" class="waves-effect waves-darken">Выйти</a></li>
+</ul>
+<!--CONTENT-->
+<main class="content">
+    <div class="page-title">
+        <h4>
+            <a href="#">Все задачи</a>
+            <i class="material-icons">keyboard_arrow_right</i>
+            Задача1
+            <i class="material-icons">keyboard_arrow_right</i>
+            Редактировать
+        </h4>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="input-field">
+                <input id="name" type="text"  value="Название" required>
+                <label for="name">Название</label>
+            </div>
+           
+            <div class="input-field">
+                <textarea id="attribute" class="materialize-textarea" value="Описание"></textarea>
+                <label for="attribute">Описание</label>
+            </div>
+            <div class="filter-pickers">
+                <div class="input-field">
+                    <input type="text" class="datepicker"  value="25.03.2012" required><label>Дата</label>
+                </div>
+            </div>
+            <div class="order">
+                <div class="input-field ">
+                    <input type="text" list="priority" class="datalist" value="Обычный" id ="pr">
+                        <datalist id="priority">
+                            <option value="Обычный"></option>
+                            <option value="Низкий"></option>
+                            <option value="Срочный"></option>
+                        </datalist>
+                    <label for="pr">Приоритет</label>
+                </div>
+            </div>
+           
+            <div>
+                <button class="waves-effect waves-light btn grey darken-1">
+                    Отмена
+                </button>
+                <button class="waves-effect waves-light btn grey darken-4">
+                    Сохранить
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="scripts/materialize.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>

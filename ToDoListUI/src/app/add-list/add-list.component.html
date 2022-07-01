@@ -1,0 +1,57 @@
+<div class="page-title">
+    <h4>
+        <a href="#">Списки задач</a>
+        <i class="material-icons">keyboard_arrow_right</i>
+        Добавить список
+    </h4>
+</div>
+
+<form
+#addForm="ngForm"
+(ngSubmit)="add()">
+<div class="row">
+    <div class="col s12 l6">
+        <div class="input-field">
+            
+            <!-- <div class="input-field ">
+                <input
+                 class ="active"
+                 type="text"
+                 id="personid"
+                 name="personid"
+                 [(ngModel)]="model.personid"
+                 value="{{userId}}"
+                 >
+            <label for="personid">personid</label>
+             </div> -->
+            
+            <div class="input-field ">
+                <input
+                 class ="validate"
+                 type="text"
+                 id="name"
+                 name="name"
+                 [(ngModel)]="model.name"
+                 >
+            <label for="name">Название</label>
+            </div>
+       
+        <div class = "right">
+            <div class="row">
+                <div class="col s5">
+                    <button routerLink="/to-do-list" class="waves-effect waves-light btn grey darken-1">
+                        Отмена
+                    </button>
+                </div>
+                
+                <div class="col s2">
+                    <button type="submit" class="waves-effect waves-light btn grey darken-4">
+                        Сохранить
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

@@ -1,0 +1,64 @@
+
+    <div class="page-title">
+        <h4>
+            <a routerLink="/to-do-item">Все задачи</a>
+            <i class="material-icons">keyboard_arrow_right</i>
+             {{todoitem.name}}
+        </h4>
+    
+    </div>
+
+    <br>    
+    <label> Описание</label>
+    <h6>
+        {{todoitem.attributes}} 
+    </h6>
+    
+    <br> 
+    <label> Дата</label>
+    <h6>
+        {{todoitem.date}} 
+    </h6>
+    <br> 
+
+    <label> Приоритет</label>
+    <h6 *ngIf="todoitem.priority == 2">Срочный</h6> 
+    <h6 *ngIf="todoitem.priority == 1">Важный</h6>
+    <h6 *ngIf="todoitem.priority == 0">Обычный</h6>
+    <br> 
+    <hr>
+
+    <div class="row">
+        <div class="right">
+        <div class="col s5">
+        <button [routerLink]="['/edit-item', todoitem.id]" class=" btn btn-small grey darken-4" >
+            <i class="material-icons">edit</i>
+        </button>
+        </div>
+        
+        <div class="col s4">
+            <form (ngSubmit)="deleteItem()">
+            <button type="submit"  class="btn btn-small grey darken-4 modal-trigger" data-target="del">
+                <i class="material-icons">delete</i>
+            </button>
+        </form>
+        </div>
+        </div>
+    </div>
+
+    <div id="del" class="modal">
+        <div class="modal-content">
+            <h4 class="mb1">Вы действительно хотите удалить эту задачу?</h4>
+
+            <div class=" modal-footer">
+            <div class="left">
+            <button class=" modal-close waves-effect waves-light btn grey darken-1">
+                Отмена
+            </button>
+            <button class="waves-effect waves-light btn grey darken-4">
+                Удалить
+            </button>
+            </div>
+            </div>
+        </div>
+    </div>  

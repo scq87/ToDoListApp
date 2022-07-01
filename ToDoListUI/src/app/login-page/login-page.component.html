@@ -1,0 +1,70 @@
+<div class="auth-block">
+<form
+    #loginForm="ngForm"
+    class="card"
+    (ngSubmit)="login()"
+>
+        <div class="card-content">
+            <span class="card-title">Войти в систему</span>
+            <div class="input-field ">
+                <input
+                 class ="validate"
+                 id="username"
+                 type="text"
+                 name="username"
+                 [(ngModel)]="model.username"
+                 >
+                <label for="username">Логин:</label>
+                
+            </div>
+            <div class="input-field">
+                <input 
+                class ="validate"
+                id="password" 
+                type="password"
+                name="password"
+                [(ngModel)]="model.password"
+                >
+                <label for="password">Пароль:</label>
+            </div>
+            <span 
+                class="hellper-text orange-text"
+                *ngIf="loginForm.invalid && loginForm.touched"
+                >
+                    Не правильно заполнена форма!
+                </span>
+        </div>
+        <div class="card-action">
+            <button
+            disabled = "true" 
+            type ="submit" 
+            class="modal-action btn waves-effect grey darken-4"
+            [disabled]="loginForm.invalid"
+            >
+            Войти</button>
+        </div>   
+ </form>
+
+
+ <!-- *ngIf="!loggedIn()"  *ngIf="loggedIn()" -->
+<!-- 
+
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="dropdown">
+      <a class="dropdown-toggle text-light" href="#">
+        Добро пожаловать,
+      </a>                                                                                                                   
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Редактировать профиль</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Выход</a>
+      </div>
+    </div>
+<form #loginForm="ngForm"  class="form-inline my-2 my-lg-0" required (ngSubmit)="login()">
+    <input class="form-control mr-sm-2" type="text" placeholder="Логин"
+    aria-label="Логин" required name="username" [(ngModel)]="model.username">
+    <input class="form-control mr-sm-2" type="password" placeholder="Пароль"
+     aria-label="Пароль" required name="password" [(ngModel)]="model.password">
+    <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Войти</button>
+  </form>
+</div> -->

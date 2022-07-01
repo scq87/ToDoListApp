@@ -1,0 +1,111 @@
+    <!-- <div class="page-title">
+        <h4>
+            Списки задач
+            <i class="material-icons black-text pointer" id="dashboard-info">info_outline</i>
+        </h4>
+    </div>
+
+
+    <div class="row" *ngFor="let item of todolist">
+      <div class="col s12 m6" *ngIf="item.personId == userId">
+        <div class="card grey darken-4">
+          <div class="card-content white-text">
+            <span class="card-title">{{item.name}}</span>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+            <a href="#edit-modal" class="right modal-trigger"> <i class="material-icons">edit</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
+
+<div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+        <h5>Здесь вы можете</h5>
+        <p>Просмотреть отдельно созданные вами списки с задачами или создать новые</p>
+    </div>
+</div>
+ -->
+
+   <div class="page-title">
+        <h4>
+            Списки задач
+            <!-- <i class="material-icons black-text pointer" id="dashboard-info">info_outline</i> -->
+        </h4>
+    </div>
+    <div class="row">
+    <div *ngFor="let item of todolist"> 
+      <div *ngIf="item.personId == userId">
+          <div class="col s12 m6">
+            <div class="card grey darken-4">
+              <div class="card-content white-text">
+                <span class="card-title">{{item.name}}</span>
+              </div>
+              <div class="card-action">
+                <a [routerLink]="['/list-item', item.id]"><i class="material-icons">view_list</i></a>
+                <a class="right" [routerLink]="['/edit-list', item.id]"><i class="material-icons">edit</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  
+<!--      
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <h4 class="mb1">Редактировать</h4>
+       
+        <div class=" input-field">
+            <input id="pos-name" type="text" required>
+            <label for="pos-name">Название</label>
+        </div>
+       
+    
+        <div class="modal-footer">
+          <button class="left btn btn-small grey darken-4">
+            <i class="material-icons">delete</i>
+          </button>
+          <button class="modal-close waves-effect waves-light btn grey darken-1">
+            Отмена
+          </button>
+          <button class="waves-effect waves-light btn grey darken-4">
+              Сохранить изменения
+          </button>
+        </div>
+    </div>
+  </div> -->
+<!--         
+        <div class="col s12 m6">
+          <div class="card grey darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#edit-modal" class="right modal-trigger"> <i class="material-icons">edit</i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card grey darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#edit-modal" class="right modal-trigger"> <i class="material-icons">edit</i></a>
+            </div>
+          </div>
+        </div> -->
+
+      </div>

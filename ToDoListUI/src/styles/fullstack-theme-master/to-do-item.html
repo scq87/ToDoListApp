@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <title>To do</title>
+</head>
+<body>
+    
+<!--SIDEBAR-->
+<ul class="sidenav sidenav-fixed a-sidenav ">
+    
+    <li class="grey darken-4"> 
+        <div class="row">
+            <div class="col s12 m4 12"> <h4 class="white-text">Dosmth</h4></div>
+        </div>
+    </li>   
+    <li class="bold"><a href="#" class="waves-effect waves-darken">Списки задач</a></li>
+    <li class="bold active"><a href="#" class="waves-effect waves-darken">Все задачи</a></li>
+    <!-- <li class="bold"><a href="#" class="waves-effect waves-darken">Добавить задачу</a></li> -->
+    <li class="bold last"><a href="#" class="waves-effect waves-darken">Выйти</a></li>
+</ul>
+<!--CONTENT-->
+<main class="content">
+    <div class="page-title">
+        <h4>
+            Все задачи
+            <i class="material-icons black-text pointer" id="dashboard-info">info_outline</i>
+        </h4>
+       
+        <button class="btn btn-small js-filter tooltipped grey darken-4" data-tooltip="Фильтр">
+            <i class="material-icons">filter_list</i>
+        </button>
+    </div>
+
+    <div class="filter js-filter-block hide">
+        <div class="fr">
+            <div class="col order">
+                <div class="input-field inline order-position-input">
+                    <input type="text" id="txt">
+                    <label for="txt">По названию</label>
+                </div>
+            </div>
+            <div class="col order">
+                <div class="input-field inline order-position-input">
+                    <input type="text" list="priority" class="datalist" id ="pr">
+                        <datalist id="priority">
+                            <option value="Обычный"></option>
+                            <option value="Низкий"></option>
+                            <option value="Срочный"></option>
+                        </datalist>
+                    <label for="pr">Приоритет</label>
+                </div>
+            </div>
+            <div class="col filter-pickers">
+                <div class="input-field">
+                    <input type="text" class="datepicker">
+                    <label>Дата</label>
+                </div>
+            </div>
+            
+        </div>
+       
+        <button class="btn waves-effect wavers-white grey darken-4 btn-small">Применить фильтр</button>
+    </div>
+
+   
+    <table class="highlight mb2">
+        
+            
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Название</th>
+            <th>Дата</th>
+            <th>Приоритет</th>
+            <th>Выполненно</th>
+            <th></th>   
+            <th></th> 
+            <th></th>   
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+            
+            <td>1</td>
+            <td>Задача1</td>
+            <td>20.07.2022</td>
+            <td class="text-red lighten-5">Обычный</td>
+            
+            <td style="padding-left:30px;">
+                    <form action="#">
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <button class="btn btn-small modal-trigger grey darken-4" data-target="order-list">
+                    <i class="material-icons">open_in_new</i>
+                </button>
+            </td>
+            
+        </tr>
+        
+        
+        <tr>
+           
+            <td>2</td>
+            <td class="orange-text text-darken-1">Задача2</td>
+            <td>20.07.2022</td>
+            <td>Важный</td>
+            
+            <td style="padding-left:30px;">
+                    <form action="#">
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <button class="btn btn-small modal-trigger grey darken-4" data-target="order-list">
+                    <i class="material-icons">open_in_new</i>
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+           
+            <td>3</td>
+            <td class="red-text text-darken-2">Задача3</td>
+            <td>20.07.2022</td>
+            <td>Срочный</td>
+            
+            <td style="padding-left:30px;">
+                    <form action="#">
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                    </p>
+                </form>
+            </td>
+            <td>
+                <button class="btn btn-small modal-trigger grey darken-4" data-target="order-list">
+                    <i class="material-icons">open_in_new</i>
+                </button>
+            </td>
+        </tr>
+
+        
+        </tbody>
+    </table>
+    <div class="center mb2">
+        <button class="btn waves-effect grey darken-4 btn-small">Загрузить еще</button>
+    </div>
+
+</main>
+
+<a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
+
+<div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+        <h5>Здесь вы можете</h5>
+        <p>Просмотреть абсолютно все задачи которые вы создали или же создать новые</p>
+    </div>
+</div>
+
+
+<!--Floating button-->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large  grey darken-4">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating green"><i class="material-icons">assignment</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">list</i></a></li>
+    </ul>
+</div>
+
+<script src="scripts/materialize.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>

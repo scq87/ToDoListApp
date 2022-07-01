@@ -1,0 +1,124 @@
+<div class="page-title">
+    <h4>
+        Все задачи
+        <!-- <i class="material-icons black-text pointer" id="dashboard-info">info_outline</i> -->
+    </h4>
+   
+    <!-- <button class="btn btn-small js-filter tooltipped grey darken-4" data-tooltip="Фильтр">
+        <i class="material-icons">filter_list</i>
+    </button> -->
+</div>
+<!-- 
+<div class="filter js-filter-block hide">
+    <div class="fr">
+        <div class="col order">
+            <div class="input-field inline order-position-input">
+                <input type="text" id="txt">
+                <label for="txt">По названию</label>
+            </div>
+        </div>
+        <div class="col order">
+            <div class="input-field inline order-position-input">
+                <input type="text" list="priority" class="datalist" id ="pr">
+                    <datalist id="priority">
+                        <option value="Обычный"></option>
+                        <option value="Низкий"></option>
+                        <option value="Срочный"></option>
+                    </datalist>
+                <label for="pr">Приоритет</label>
+            </div>
+        </div>
+        <div class="col filter-pickers">
+            <div class="input-field">
+                <input type="text" class="datepicker">
+                <label>Дата</label>
+            </div>
+        </div>
+        
+    </div>
+   
+    <button class="btn waves-effect wavers-white grey darken-4 btn-small">Применить фильтр</button>
+</div> -->
+
+
+<table class="highlight mb2">
+    
+        
+    <thead>
+    <tr>
+        <!-- <th>№</th> -->
+        <th></th>
+        <th>Название</th>
+        <th>Дата</th>
+        <th>Приоритет</th>
+        <!-- <th>Выполненно</th> -->
+        <th></th>   
+        <th></th> 
+        <th></th>   
+    </tr>
+    </thead>
+    
+    <tbody *ngFor="let item of todoitems">
+    
+    <tr *ngIf="item.personId == userId">
+        <td></td>
+        <!-- <td>{{item.id}}</td> -->
+        <td *ngIf="item.priority == 2">
+            <span class="red-text text-darken-2">
+                {{item.name}}
+            </span>
+        </td>
+        <td *ngIf="item.priority == 1">
+            <span class="orange-text text-darken-1">
+                {{item.name}}
+            </span>
+        </td>
+        <td *ngIf="item.priority == 0">
+            <span>
+                {{item.name}}
+            </span>
+        </td>
+        <td>{{item.date}}</td>
+  
+        <td *ngIf="item.priority == 2">Срочный</td>
+        <td *ngIf="item.priority == 1">Важный</td>
+        <td *ngIf="item.priority == 0">Обычный</td>
+        
+        <!-- <td style="padding-left:30px;">
+                <form action="#">
+                <p>
+                    <label>
+                        <input type="checkbox" />
+                        <span></span>
+                      </label>
+                </p>
+            </form>
+        </td> -->
+        <td>
+            <button 
+            [routerLink]="['/overview-item',item.id]"
+             class="btn btn-small modal-trigger grey darken-4">
+                <i class="material-icons">open_in_new</i>
+            </button>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+<!-- <a id="menu" class="waves-effect waves-light btn btn-floating"  onclick="$('.tap-target').tapTarget('open')"><i class="material-icons">info</i></a>
+
+<div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+        <h5>Здесь вы можете</h5>
+        <p>Просмотреть абсолютно все задачи которые вы создали или же создать новые</p>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('.tap-target').tapTarget();
+  });
+
+</script> -->

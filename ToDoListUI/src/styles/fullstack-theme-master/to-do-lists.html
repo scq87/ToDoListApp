@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <title>Lists</title>
+</head>
+<body>
+
+<!--SIDEBAR-->
+<ul class="sidenav sidenav-fixed a-sidenav ">
+    
+    <li class="grey darken-4"> 
+        <div class="row">
+            <div class="col s12 m4 12"> <h4 class="white-text">Dosmth</h4></div>
+        </div>
+    </li>   
+    <li class="bold active"><a href="#" class="waves-effect waves-darken">Списки задач</a></li>
+    <li class="bold"><a href="#" class="waves-effect waves-darken">Все задачи</a></li>
+    <!-- <li class="bold"><a href="#" class="waves-effect waves-darken">Добавить задачу</a></li> -->
+    <li class="bold last"><a href="#" class="waves-effect waves-darken">Выйти</a></li>
+</ul>
+<!--CONTENT-->
+<main class="content">
+    <div class="page-title">
+        <h4>
+            Списки задач
+            <i class="material-icons black-text pointer" id="dashboard-info">info_outline</i>
+        </h4>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card grey darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#edit-modal" class="right modal-trigger"> <i class="material-icons">edit</i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m6">
+          <div class="card grey darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#edit-modal" class="right modal-trigger"> <i class="material-icons">edit</i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6">
+          <div class="card grey darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#edit-modal" class="right modal-trigger"> <i class="material-icons">edit</i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+</main>
+
+<a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
+
+<div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+        <h5>Здесь вы можете</h5>
+        <p>Просмотреть отдельно созданные вами списки с задачами или создать новые</p>
+    </div>
+</div>
+
+
+
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <h4 class="mb1">Редактировать</h4>
+       
+        <div class=" input-field">
+            <input id="pos-name" type="text" required>
+            <label for="pos-name">Название</label>
+        </div>
+       
+    
+        <div class="modal-footer">
+          <button class="left btn btn-small grey darken-4">
+            <i class="material-icons">delete</i>
+          </button>
+          <button class="modal-close waves-effect waves-light btn grey darken-1">
+            Отмена
+          </button>
+          <button class="waves-effect waves-light btn grey darken-4">
+              Сохранить изменения
+          </button>
+        </div>
+    </div>
+  </div>
+
+<!--Floating button-->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons grey darken-4">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating green"><i class="material-icons">assignment</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">list</i></a></li>
+    </ul>
+</div>
+
+<script src="scripts/materialize.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>

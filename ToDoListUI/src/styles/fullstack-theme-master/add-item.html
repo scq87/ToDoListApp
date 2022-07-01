@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <title>Add item</title>
+</head>
+<body>
+<!--SIDEBAR-->
+<ul class="sidenav sidenav-fixed a-sidenav ">
+    
+    <li class="grey darken-4"> 
+        <div class="row">
+            <div class="col s12 m4 12"> <h4 class="white-text">Dosmth</h4></div>
+        </div>
+    </li>   
+    <li class="bold "><a href="#" class="waves-effect waves-darken">Списки задач</a></li>
+    <li class="bold active"><a href="#" class="waves-effect waves-darken">Все задачи</a></li>
+    <!-- <li class="bold"><a href="#" class="waves-effect waves-darken">Добавить задачу</a></li> -->
+    <li class="bold last"><a href="#" class="waves-effect waves-darken">Выйти</a></li>
+</ul>
+<!--CONTENT-->
+<main class="content">
+    <div class="page-title">
+        <h4>
+            <a href="#">Все задачи</a>
+            <i class="material-icons">keyboard_arrow_right</i>
+            Добавить задачу
+        </h4>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="input-field">
+                <input id="name" type="text" required>
+                <label for="name">Название</label>
+            </div>
+           
+            <div class="input-field">
+                <textarea id="attribute" class="materialize-textarea"></textarea>
+                <label for="attribute">Описание</label>
+            </div>
+            <div class="filter-pickers">
+                <div class="input-field">
+                    <input type="text" class="datepicker" required><label>Дата</label>
+                </div>
+            </div>
+            <div class="order">
+                <div class="input-field ">
+                    <input type="text" list="priority" class="datalist" id ="pr">
+                        <datalist id="priority">
+                            <option value="Обычный"></option>
+                            <option value="Низкий"></option>
+                            <option value="Срочный"></option>
+                        </datalist>
+                    <label for="pr">Приоритет</label>
+                </div>
+            </div>
+            <div class="order">
+                <div class="input-field ">
+                    <input type="text" list="lst" class="datalist" id ="lt">
+                        <datalist id="lst">
+                            <option value="list1"></option>
+                            <option value="list2"></option>
+                        </datalist>
+                    <label for="pr">Список</label>
+                </div>
+            </div>
+            
+                <div class="row">
+                    <div class="col s2">
+                        <button class="waves-effect waves-light btn grey darken-1">
+                            Отмена
+                        </button>
+                    </div>
+                    <div class="col s2">
+                        <button class="waves-effect waves-light btn grey darken-4">
+                            Сохранить
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- <div id="create-modal" class="modal">
+    <div class="modal-content">
+        <h4 class="mb1">Создать список</h4>
+        <div class="input-field">
+            <input id="name" type="text" required>
+            <label for="name">Название</label>
+        </div>
+        <div class="input-field">
+            <textarea id="attribute" class="materialize-textarea"></textarea>
+            <label for="attribute">Описание</label>
+        </div>
+        <div class="col filter-pickers">
+            <div class="input-field">
+                <input type="text" class="datepicker" required><label>Дата</label>
+            </div>
+        </div>
+        <div class="col order">
+            <div class="input-field inline order-position-input">
+                <input type="text" list="priority" class="datalist" id ="pr">
+                    <datalist id="priority">
+                        <option value="Обычный"></option>
+                        <option value="Низкий"></option>
+                        <option value="Срочный"></option>
+                    </datalist>
+                <label for="pr">Приоритет</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-action waves-effect waves-black btn-flat">Отмена</a>
+        <button class="modal-action btn waves-effect">Сохранить</button>
+    </div>
+</div> -->
+
+
+<script src="scripts/materialize.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>

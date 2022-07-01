@@ -1,0 +1,149 @@
+<!-- <div class="page-title">
+    <h4>
+        <a href="#">Все задачи</a>
+        <i class="material-icons">keyboard_arrow_right</i>
+        Задача1
+        <i class="material-icons">keyboard_arrow_right</i>
+        Редактировать
+    </h4>
+</div>
+
+<div class="row">
+    <div class="col s12 l6">
+        <div class="input-field">
+            <input id="name" type="text" required>
+            <label for="name">Название</label>
+        </div>
+       
+        <div class="input-field">
+            <textarea id="attribute" class="materialize-textarea"></textarea>
+            <label for="attribute">Описание</label>
+        </div>
+        <div class="filter-pickers">
+            <div class="input-field">
+                <input type="text" class="datepicker" required><label>Дата</label>
+            </div>
+        </div>
+        <div class="order">
+            <div class="input-field ">
+                <input type="text" list="priority" class="datalist" id ="pr">
+                    <datalist id="priority">
+                        <option value="Обычный"></option>
+                        <option value="Низкий"></option>
+                        <option value="Срочный"></option>
+                    </datalist>
+                <label for="pr">Приоритет</label>
+            </div>
+        </div>
+       
+        <div class = "right">
+            <div class="row">
+                <div class="col s5">
+                    <button class="waves-effect waves-light btn grey darken-1">
+                        Отмена
+                    </button>
+                </div>
+                
+                <div class="col s2">
+                    <button class="waves-effect waves-light btn grey darken-4">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="page-title">
+    <h4>
+        <a routerLink="/to-do-item">Все задачи</a>
+        <i class="material-icons">keyboard_arrow_right</i>
+        <a routerLink="/overview-item/{{todoitem.id}}">{{todoitem.name}}</a>
+        <i class="material-icons">keyboard_arrow_right</i>
+        Редактировать
+    </h4>
+</div>
+
+<form
+#editForm="ngForm"
+(ngSubmit)="editItem()">
+<div class="row">
+    <div class="col s12 l6">
+        <div class="input-field">
+            <div class="input-field ">
+                <input
+                 class ="validate"
+                 type="text"
+                 id="name"
+                 name="name"
+                 [(ngModel)]="todoitem.name">
+            <label class="active" for="name">Название</label>
+        </div>
+       
+        <div class="input-field">
+            <textarea
+             id="attribute" 
+             type="text"
+             name="attribute"
+             [(ngModel)]="todoitem.attributes"
+             class="materialize-textarea">
+            </textarea>
+            <label class="active" for="attribute">Описание</label>
+        </div>
+        
+        <div class="filter-pickers">
+            <div class="input-field">
+                <input
+                 type="text" 
+                 class="datepicker" 
+                 id="date"
+                 name="date"
+                 [(ngModel)]="todoitem.date">
+                 <label for="date" class="active">Дата</label>
+            </div>
+        </div>
+        <div class="order">
+            <div class="input-field ">
+                <input
+                 type="text" 
+                 list="priority" 
+                 class="datalist" 
+                 id ="pr"
+                 name="priority"
+                 [(ngModel)]="todoitem.priority">
+                    <datalist id="priority">
+                        <option value="0">Обычный</option>
+                        <option value="1">Важный</option>
+                        <option value="2">Срочный</option>
+                    </datalist>
+                <label class="active" for="pr">Приоритет</label>
+            </div>
+        </div>
+        <!-- <div class="order">
+            <div class="input-field ">
+                <input type="text" list="lst" class="datalist" id ="lt">
+                    <datalist id="lst">
+                        <option value="list1"></option>
+                        <option value="list2"></option>
+                    </datalist>
+                <label for="pr">Список</label>
+            </div> -->
+        </div>
+        <div class = "right">
+            <div class="row">
+                <div class="col s5">
+                    <button routerLink="/overview-item/{{todoitem.id}}" class="waves-effect waves-light btn grey darken-1">
+                        Отмена
+                    </button>
+                </div>
+                
+                <div class="col s2">
+                    <button type="submit" class="waves-effect waves-light btn grey darken-4">
+                        Сохранить
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

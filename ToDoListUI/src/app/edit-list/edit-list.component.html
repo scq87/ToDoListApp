@@ -1,0 +1,50 @@
+
+<div class="page-title">
+    <h4>
+        <a routerLink="/to-do-lists">Все списки</a>
+        <i class="material-icons">keyboard_arrow_right</i>
+        Редактировать
+         <i class="material-icons">keyboard_arrow_right</i> 
+         {{todolist.name}}
+    </h4>
+</div>
+
+<form
+#editForm="ngForm"
+(ngSubmit)="editItem()">
+<div class="row">
+    <div class="col s12 l6">
+        <div class="input-field">
+            <div class="input-field ">
+                <input
+                 class ="validate"
+                 type="text"
+                 id="name"
+                 name="name"
+                 [(ngModel)]="todolist.name">
+            <label class="active" for="name">Название</label>
+        </div>
+        </div>
+        <form (ngSubmit)="deleteItem()">
+            <button type="submit"  class="btn btn-small grey darken-4 modal-trigger" data-target="del">
+                <i class="material-icons">delete</i>
+            </button>
+        </form>
+        <div class = "right">
+            <div class="row">
+                <div class="col s5">
+                    <button routerLink="/to-do-lists" class="waves-effect waves-light btn grey darken-1">
+                        Отмена
+                    </button>
+                </div>
+                
+                <div class="col s2">
+                    <button type="submit" class="waves-effect waves-light btn grey darken-4">
+                        Сохранить
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
